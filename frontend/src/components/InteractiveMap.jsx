@@ -3,13 +3,23 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-// Fix for default marker icon
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+// Fix for default marker icon in React
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import iconRetina from 'leaflet/dist/images/marker-icon-2x.png';
+
+let DefaultIcon = L.icon({
+  iconRetinaUrl: iconRetina,
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [41, 41]
 });
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const lesothoLocations = [
   {
@@ -46,10 +56,10 @@ const lesothoLocations = [
 
 const InteractiveMap = () => {
   return (
-    <div className="w-full h-[600px]">
-      <MapContainer 
-        center={[-29.6, 28.5]} 
-        zoom={8} 
+    <div className="w-full h-64">
+      <MapContainer
+        center={[-29.6, 28.5]}
+        zoom={8}
         scrollWheelZoom={false}
         className="h-full w-full"
       >
@@ -61,9 +71,9 @@ const InteractiveMap = () => {
           <Marker key={index} position={location.position}>
             <Popup>
               <div>
-                <h3 className="text-lg font-bold text-my-green-color-style">{location.name}</h3>
+                <h3 className="text-lg font-bold text-green-700">{location.name}</h3>
                 <p className="text-gray-600">{location.description}</p>
-                <span className="bg-green-100 text-my-green-color-style px-2 py-1 rounded-full text-sm">
+                <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">
                   {location.type}
                 </span>
               </div>

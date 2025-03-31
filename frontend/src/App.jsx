@@ -12,6 +12,9 @@ import EconomyAndBusiness from "./pages/EconomyAndBusiness"
 import Gallery from "./pages/Gallery"
 import Blog from "./pages/Blog"
 import ContactPage from "./pages/ContactPage"
+import MapPage from "./pages/MapPage"
+import Weather from "./pages/Weather"
+import CurrencyPage from "./pages/CurrencyPage"
 
 function App() {
 
@@ -29,6 +32,9 @@ function App() {
             <Route path="/travel-guide" element={<TravelGuide />} />
             <Route path="/economy" element={<EconomyAndBusiness />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/currency" element={<CurrencyPage />} />
+            <Route path="/map" element={<MapPage />} />
+            <Route path="/weather-forecast" element={<Weather />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaCamera, FaGlobeAfrica, FaHiking, FaHireAHelper, FaHistory, FaMountain } from 'react-icons/fa';
+import { FaCamera, FaCloud, FaGlobeAfrica, FaHiking, FaHireAHelper, FaHistory, FaMap, FaMountain } from 'react-icons/fa';
 
 const Home = () => {
   return (
@@ -65,6 +65,28 @@ const Home = () => {
               className="my-secondary-text-color-style hover:underline"
             >
               Discover History
+            </Link>
+            
+          </div>
+          <div className='bg-white p-6 rounded-lg shadow-md text-center'>
+            <FaMap className="mx-auto text-5xl my-text-color-style mb-4" />
+            <h2 className="text-2xl my-text-color-style font-semibold mb-4">Lesotho Map</h2>
+            <Link 
+              to="/map" 
+              className="my-secondary-text-color-style hover:underline"
+            >
+              Explore Lesotho
+            </Link>
+            
+          </div>
+          <div className='bg-white p-6 rounded-lg shadow-md text-center'>
+            <FaCloud className="mx-auto text-5xl my-text-color-style mb-4" />
+            <h2 className="text-2xl my-text-color-style font-semibold mb-4">Lesotho Weather</h2>
+            <Link 
+              to="/weather-forecast" 
+              className="my-secondary-text-color-style hover:underline"
+            >
+              Explore Lesotho' Weather
             </Link>
             
           </div>
