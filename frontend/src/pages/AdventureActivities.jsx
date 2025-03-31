@@ -4,7 +4,6 @@ import { Car, Mountain, Snowflake } from 'lucide-react';
 import { 
     FaMountain,
     FaHorse, 
-  
   } from 'react-icons/fa';
 const AdventureActivities = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState("All");
