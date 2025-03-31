@@ -63,29 +63,29 @@ const TouristAttractions = () => {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">{attraction.name}</h2>
+                <h2 className="text-2xl my-text-color-style font-bold mb-4">{attraction.name}</h2>
                 <p className="text-gray-600 mb-4">{attraction.description}</p>
                 
                 <div className="space-y-2">
                   <div className="flex items-center">
-                    <Map className="mr-2 text-green-600" />
+                    <Map className="mr-2 my-secondary-text-color-style" />
                     <span>{attraction.location}</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="mr-2 text-blue-600" />
+                    <Clock className="mr-2 my-secondary-text-color-style" />
                     <span>Best Time: {attraction.bestTimeToVisit}</span>
                   </div>
                 </div>
 
                 <div className="mt-4">
                   <h3 className="font-semibold mb-2 flex items-center">
-                    <Camera className="mr-2 text-purple-600" /> Activities
+                    <Camera className="mr-2 my-secondary-text-color-style" /> Activities
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {attraction.activities.map(activity => (
                       <span 
                         key={activity} 
-                        className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm"
+                        className="bg-green-100 my-secondary-text-color-style px-2 py-1 rounded-full text-sm"
                       >
                         {activity}
                       </span>

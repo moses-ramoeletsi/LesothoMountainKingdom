@@ -55,14 +55,20 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 bg-gradient-to-br from-green-100 to-blue-200">
-      <h1 className="text-4xl font-bold text-center mb-8 text-blue-900">
-        Contact & Community Engagement
-      </h1>
+    <div className="  bg-gradient-to-br from-green-100 to-blue-200">
+      <div 
+        className="h-[400px] bg-cover bg-center flex items-center justify-center text-white"
+        style={{backgroundImage: "url('/images/community/contact-hero.jpg')"}}
+      >
+        <div className="text-center bg-black bg-opacity-50 p-10 rounded-xl">
+          <h1 className="text-4xl font-bold mb-4">Contact & Community Engagement</h1>
+          <p className="text-xl">Connect with Lesotho's Vibrant Communities and Local Initiatives</p>
+        </div>
+      </div>
 
       {/* Contact Tabs */}
       <div className="mb-8">
-        <div className="flex flex-wrap border-b border-gray-300">
+        <div className=" container mx-auto flex flex-wrap border-b border-gray-300">
           {[
             { key: 'emergency', label: 'Emergency Contacts', icon: <FaPhone /> },
             { key: 'embassy', label: 'Embassy & Visa Offices', icon: <FaBuilding /> },
@@ -74,7 +80,7 @@ const Contact = () => {
               onClick={() => setActiveTab(tab.key)}
               className={`flex items-center px-4 py-3 mr-1 transition-colors ${
                 activeTab === tab.key
-                  ? 'bg-blue-600 text-white rounded-t-lg'
+                  ? 'my-green-color-style text-white rounded-t-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100 rounded-t-lg'
               }`}
             >
@@ -89,26 +95,26 @@ const Contact = () => {
       <div className="bg-white rounded-lg shadow-md p-6 mb-12">
         {activeTab === 'emergency' && (
           <>
-            <h2 className="text-2xl font-semibold mb-6 text-blue-900">Emergency Contacts</h2>
+            <h2 className="text-2xl font-semibold mb-6 my-text-color-style">Emergency Contacts</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {emergencyContacts.map((contact, index) => (
                 <div key={index} className="border rounded-lg p-4 hover:border-blue-300 transition-colors">
-                  <h3 className="text-lg font-semibold text-blue-800">{contact.name}</h3>
-                  <p className="text-xl font-bold text-red-600 my-2">{contact.number}</p>
+                  <h3 className="text-lg font-semibold my-text-color-style">{contact.name}</h3>
+                  <p className="text-xl font-bold my-secondary-text-color-style my-2">{contact.number}</p>
                   <p className="text-gray-600">Hours: {contact.hours}</p>
                   <p className="mt-2 text-sm text-gray-700">{contact.description}</p>
                 </div>
               ))}
             </div>
             
-            <h3 className="text-xl font-semibold mt-8 mb-4 text-blue-900">Tourism Offices</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-4 my-text-color-style">Tourism Offices</h3>
             <div className="grid md:grid-cols-3 gap-4">
               {tourismOffices.map((office, index) => (
                 <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-blue-800">{office.name}</h4>
+                  <h4 className="font-semibold my-text-color-style">{office.name}</h4>
                   <p className="text-sm text-gray-600 my-1">{office.address}</p>
                   <p className="text-sm font-medium">{office.phone}</p>
-                  <p className="text-sm text-blue-600">{office.email}</p>
+                  <p className="text-sm my-secondary-text-color-style">{office.email}</p>
                   <p className="text-sm text-gray-700 mt-2">Hours: {office.hours}</p>
                 </div>
               ))}
@@ -118,11 +124,11 @@ const Contact = () => {
 
         {activeTab === 'embassy' && (
           <>
-            <h2 className="text-2xl font-semibold mb-6 text-blue-900">Embassies & Consulates in Lesotho</h2>
+            <h2 className="text-2xl font-semibold mb-6 my-text-color-style">Embassies & Consulates in Lesotho</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {embassyOffices.map((embassy, index) => (
                 <div key={index} className="border rounded-lg p-4 hover:border-blue-300 transition-colors">
-                  <h3 className="text-lg font-semibold text-blue-800">{embassy.country} Embassy</h3>
+                  <h3 className="text-lg font-semibold my-text-color-style">{embassy.country} Embassy</h3>
                   <p className="text-sm text-gray-600 my-2">{embassy.address}</p>
                   <div className="mt-3 space-y-1 text-sm">
                     <p><strong>Phone:</strong> {embassy.phone}</p>
@@ -133,14 +139,14 @@ const Contact = () => {
               ))}
             </div>
             
-            <h3 className="text-xl font-semibold mt-8 mb-4 text-blue-900">Lesotho Embassies Abroad</h3>
+            <h3 className="text-xl font-semibold mt-8 mb-4 my-text-color-style">Lesotho Embassies Abroad</h3>
             <div className="grid md:grid-cols-3 gap-4">
               {lesothoEmbassiesAbroad.map((embassy, index) => (
                 <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <h4 className="font-semibold text-blue-800">Lesotho Embassy in {embassy.country}</h4>
+                  <h4 className="font-semibold my-text-color-style">Lesotho Embassy in {embassy.country}</h4>
                   <p className="text-sm text-gray-600 my-1">{embassy.address}</p>
                   <p className="text-sm font-medium">{embassy.phone}</p>
-                  <p className="text-sm text-blue-600">{embassy.email}</p>
+                  <p className="text-sm my-secondary-text-color-style">{embassy.email}</p>
                 </div>
               ))}
             </div>
@@ -149,7 +155,7 @@ const Contact = () => {
 
         {activeTab === 'faq' && (
           <>
-            <h2 className="text-2xl font-semibold mb-6 text-blue-900">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-semibold mb-6 my-text-color-style">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {frequentlyAskedQuestions.map((faq, index) => (
                 <div key={index} className="border rounded-lg overflow-hidden">
@@ -157,7 +163,7 @@ const Contact = () => {
                     className="w-full px-6 py-4 text-left flex justify-between items-center bg-white hover:bg-gray-50"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <span className="font-medium text-blue-800">{faq.question}</span>
+                    <span className="font-medium my-text-color-style">{faq.question}</span>
                     {openFAQ === index ? <FaChevronUp /> : <FaChevronDown />}
                   </button>
                   
@@ -176,11 +182,11 @@ const Contact = () => {
 
         {activeTab === 'social' && (
           <>
-            <h2 className="text-2xl font-semibold mb-6 text-blue-900">Connect With Us</h2>
+            <h2 className="text-2xl font-semibold mb-6 my-text-color-style">Connect With Us</h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-800">Social Media</h3>
+                <h3 className="text-xl font-semibold mb-4 my-text-color-style">Social Media</h3>
                 <div className="space-y-4">
                   {socialMediaLinks.map((social, index) => (
                     <a 
@@ -190,10 +196,10 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="flex items-center p-3 border rounded-lg hover:bg-blue-50 hover:border-blue-300 transition-colors"
                     >
-                      {social.platform === 'Facebook' && <FaFacebook className="text-blue-600 text-xl mr-3" />}
-                      {social.platform === 'Twitter' && <FaTwitter className="text-blue-400 text-xl mr-3" />}
-                      {social.platform === 'Instagram' && <FaInstagram className="text-pink-500 text-xl mr-3" />}
-                      {social.platform === 'YouTube' && <FaYoutube className="text-red-600 text-xl mr-3" />}
+                      {social.platform === 'Facebook' && <FaFacebook className="my-secondary-text-color-style text-xl mr-3" />}
+                      {social.platform === 'Twitter' && <FaTwitter className="my-secondary-text-color-style text-xl mr-3" />}
+                      {social.platform === 'Instagram' && <FaInstagram className="my-secondary-text-color-style text-xl mr-3" />}
+                      {social.platform === 'YouTube' && <FaYoutube className="my-secondary-text-color-style text-xl mr-3" />}
                       <div>
                         <p className="font-medium">{social.platform}</p>
                         <p className="text-sm text-gray-600">{social.handle}</p>
@@ -204,7 +210,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-blue-800">Send Us a Message</h3>
+                <h3 className="text-xl font-semibold mb-4 my-text-color-style">Send Us a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -268,7 +274,7 @@ const Contact = () => {
                   
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center"
+                    className="px-6 py-3 my-green-color-style text-white rounded-lg hover:bg-green-700 transition-colors flex items-center"
                   >
                     <FaPaperPlane className="mr-2" />
                     Send Message
@@ -278,7 +284,7 @@ const Contact = () => {
             </div>
             
             <div className="mt-12 p-6 bg-blue-50 rounded-lg border border-blue-100">
-              <h3 className="text-xl font-semibold mb-4 text-blue-800 flex items-center">
+              <h3 className="text-xl font-semibold mb-4 my-text-color-style flex items-center">
                 <FaEnvelope className="mr-2" />
                 Newsletter Subscription
               </h3>
@@ -292,7 +298,7 @@ const Contact = () => {
                   className="flex-1 min-w-[200px] px-4 py-2 border rounded-l-lg focus:ring-2 focus:ring-blue-300 focus:border-blue-500 outline-none transition-colors"
                 />
                 <button
-                  className="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors"
+                  className="my-green-color-style text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors"
                 >
                   Subscribe
                 </button>

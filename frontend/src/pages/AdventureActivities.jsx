@@ -120,7 +120,7 @@ const AdventureActivities = () => {
                   {activeActivity.locations.map(location => (
                     <span 
                       key={location} 
-                      className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm"
+                      className="bg-green-100 my-secondary-text-color-style px-2 py-1 rounded-full text-sm"
                     >
                       {location}
                     </span>

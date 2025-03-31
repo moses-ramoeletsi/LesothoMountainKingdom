@@ -57,7 +57,7 @@ const CultureAndTraditions = () => {
                 {selectedItem.colors.map(color => (
                   <span 
                     key={color} 
-                    className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full"
+                    className="px-3 py-1 bg-blue-100 my-secondary-text-color-style rounded-full"
                   >
                     {color}
                   </span>
@@ -69,7 +69,7 @@ const CultureAndTraditions = () => {
           {selectedItem.name === "Sesotho Language" && (
             <div>
               <h3 className="text-xl font-semibold mb-2 flex items-center">
-                <Languages className="mr-2 text-purple-600" /> Common Phrases
+                <Languages className="mr-2 my-secondary-text-color-style" /> Common Phrases
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {selectedItem.commonPhrases.map(phrase => (
@@ -88,13 +88,13 @@ const CultureAndTraditions = () => {
           {selectedItem.name === "Famo Music" && (
             <div>
               <h3 className="text-xl font-semibold mb-2 flex items-center">
-                <Music className="mr-2 text-red-600" /> Musical Elements
+                <Music className="mr-2 my-secondary-text-color-style" /> Musical Elements
               </h3>
               <div className="flex space-x-4">
                 {selectedItem.instruments.map(instrument => (
                   <span 
                     key={instrument} 
-                    className="px-3 py-1 bg-red-100 text-red-800 rounded-full"
+                    className="px-3 py-1 bg-red-100 my-secondary-text-color-style rounded-full"
                   >
                     {instrument}
                   </span>
@@ -106,13 +106,13 @@ const CultureAndTraditions = () => {
           {selectedItem.name === "Basotho Pony Trekking" && (
             <div>
               <h3 className="text-xl font-semibold mb-2 flex items-center">
-                <FaHorse div className="mr-2 text-brown-600" /> Trekking Regions
+                <FaHorse div className="mr-2 my-secondary-text-color-style" /> Trekking Regions
               </h3>
               <div className="flex space-x-4">
                 {selectedItem.regions.map(region => (
                   <span 
                     key={region} 
-                    className="px-3 py-1 bg-brown-100 text-brown-800 rounded-full"
+                    className="px-3 py-1 bg-brown-100 my-secondary-text-color-style rounded-full"
                   >
                     {region}
                   </span>

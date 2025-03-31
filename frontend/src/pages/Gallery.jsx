@@ -140,7 +140,7 @@ const Gallery = () => {
     // If search is active, show search results
     if (isSearchActive) {
       return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {searchResults.length > 0 ? (
             searchResults.map((item) => (
               <div 
@@ -181,7 +181,7 @@ const Gallery = () => {
     if (activeTab === 'landscapes' || activeTab === 'cultural' || activeTab === 'people' || 
         activeTab === 'wildlife' || activeTab === 'seasons' || activeTab === 'festivals') {
       return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item) => (
             <div 
               key={item.id} 
@@ -505,7 +505,7 @@ const Gallery = () => {
       filterOptions = locations;
       
       return (
-        <div className="mb-6">
+        <div className=" mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">Filter by Location:</label>
           <div className="flex flex-wrap gap-2">
             <button
@@ -781,13 +781,20 @@ const Gallery = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto bg-gradient-to-br from-green-100 to-blue-200 px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold my-text-color-style mb-4">Lesotho Visual Gallery</h1>
-        <p className="text-gray-600 mb-6">Explore the beauty and culture of Lesotho through stunning visuals</p>
+    <div className="bg-gradient-to-br from-green-100 to-blue-200 px-4 sm:px-6 lg:px-8 py-12">
+      <div className="  mb-8">
+        <div 
+          className="h-[400px] bg-cover bg-center flex items-center justify-center text-white"
+          style={{backgroundImage: "url('/images/history/gallery.jpg')"}}
+        >
+          <div className="text-center bg-black bg-opacity-50 p-10 rounded-xl">
+            <h1 className="text-4xl font-bold mb-4">Lesotho Visual Gallery</h1>
+            <p className="text-xl">Explore the beauty and culture of Lesotho through stunning visuals</p>
+          </div>
+        </div>
         
         {/* Search bar */}
-        <div className="relative mb-8 max-w-2xl">
+        <div className=" container mx-auto relative mb-8 max-w-2xl">
           <div className="relative">
             <input
               type="text"
@@ -815,7 +822,7 @@ const Gallery = () => {
         </div>
         
         {isSearchActive && (
-          <div className="mb-6">
+          <div className=" container mx-auto mb-6">
             <h2 className="text-lg font-semibold text-gray-700 mb-1">
               Search Results for "{searchQuery}"
             </h2>
@@ -833,7 +840,7 @@ const Gallery = () => {
         
         {/* Category tabs */}
         {!isSearchActive && (
-          <div className="mb-8">
+          <div className=" container mx-auto mb-8">
             <div className="flex flex-wrap gap-2">
               {categoryTabs.map((tab) => (
                 <button
@@ -857,12 +864,13 @@ const Gallery = () => {
           </div>
         )}
         
-        {/* Filter options */}
+      <div className='container mx-auto  flex py-6'>
         {renderFilterOptions()}
+      </div>
       </div>
       
       {/* Gallery content */}
-      <div className="mb-12">
+      <div className=" container mx-auto mb-12">
         {renderGalleryItems()}
       </div>
       
