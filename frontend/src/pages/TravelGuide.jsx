@@ -108,7 +108,7 @@ const TravelGuidePage = () => {
         </div>
 
         {/* Responsive Navigation Buttons */}
-        <div className="py-4 sm:py-6 overflow-x-auto">
+        <div className="py-4 sm:py-6 overflow-x-auto scrollbar-hide">
           <div className="flex flex-nowrap min-w-max sm:flex-wrap">
             {Object.keys(sections).map((key) => (
               <button

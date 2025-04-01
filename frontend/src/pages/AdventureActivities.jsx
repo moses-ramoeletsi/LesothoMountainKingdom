@@ -45,19 +45,23 @@ const AdventureActivities = () => {
           >
             All Activities
           </button>
-          {difficultyLevels.map(level => (
-            <button
-              key={level}
-              onClick={() => setSelectedDifficulty(level)}
-              className={`px-3 py-1 sm:px-4 sm:py-2 rounded text-sm sm:text-base ${
-                selectedDifficulty === level 
-                  ? "bg-green-600 text-white" 
-                  : "bg-gray-200 text-gray-800"
-              }`}
-            >
-              {level}
-            </button>
-          ))}
+          <div className="py-4 sm:py-6 overflow-x-auto scrollbar-hide">
+            <div className='flex flex-nowrap min-w-max sm:flex-wrap'>
+              {difficultyLevels.map(level => (
+                <button
+                  key={level}
+                  onClick={() => setSelectedDifficulty(level)}
+                  className={`px-3 sm:px-4 py-2 mr-2 mb-2 rounded text-sm sm:text-base whitespace-nowrap ${
+                    selectedDifficulty === level 
+                      ? 'my-green-color-style text-white rounded-t-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 rounded-t-lg'
+                  }`}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Main content grid - Responsive columns */}

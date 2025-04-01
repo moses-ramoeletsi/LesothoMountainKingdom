@@ -35,19 +35,23 @@ const TouristAttractions = () => {
             >
               All Attractions
             </button>
-            {attractionCategories.map(category => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded text-sm sm:text-base ${
-                  selectedCategory === category 
-                    ? "bg-green-600 text-white" 
-                    : "bg-gray-200 text-gray-800"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+            <div className="py-4 sm:py-6 overflow-x-auto scrollbar-hide">
+              <div className="flex flex-nowrap min-w-max sm:flex-wrap">
+                {attractionCategories.map(category => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-3 sm:px-4 py-2 mr-2 mb-2 rounded text-sm sm:text-base whitespace-nowrap ${
+                      selectedCategory === category 
+                       ? 'my-green-color-style text-white rounded-t-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 rounded-t-lg'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Attractions Grid */}

@@ -69,8 +69,8 @@ const Contact = () => {
         </div>
 
         {/* Responsive Contact Tabs */}
-        <div className="mb-8 overflow-x-auto">
-          <div className="min-w-max flex flex-nowrap border-b border-gray-300">
+        <div className="mb-8 overflow-x-auto scrollbar-hide">
+          <div className="min-w-max flex flex-nowrap">
             {[
               { key: 'emergency', label: 'Emergency Contacts', icon: <FaPhone /> },
               { key: 'embassy', label: 'Embassy & Visa Offices', icon: <FaBuilding /> },
@@ -80,7 +80,7 @@ const Contact = () => {
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`flex items-center px-3 sm:px-4 py-2 sm:py-3 mr-1 text-sm sm:text-base transition-colors whitespace-nowrap ${
+                className={`px-3 sm:px-4 py-2 mr-2 mb-2 rounded text-sm sm:text-base whitespace-nowrap flex items-center ${
                   activeTab === tab.key
                     ? 'my-green-color-style text-white rounded-t-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 rounded-t-lg'

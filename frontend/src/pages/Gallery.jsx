@@ -850,29 +850,29 @@ const Gallery = () => {
         
         {/* Category tabs */}
         {!isSearchActive && (
-          <div className=" container mx-auto mb-8">
-            <div className="flex flex-wrap gap-2">
-              {categoryTabs.map((tab) => (
-                <button
-                  key={tab.key}
-                  className={`flex items-center px-4 py-2 rounded-full text-sm font-medium ${
-                    activeTab === tab.key 
-                      ? 'my-green-color-style text-white' 
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
-                  onClick={() => {
-                    setActiveTab(tab.key);
-                    setFilter('all');
-                    setFilterType('location');
-                  }}
-                >
-                  <span className="mr-2">{tab.icon}</span>
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+  <div className="py-4 sm:py-6 overflow-x-auto scrollbar-hide">
+    <div className="flex flex-nowrap min-w-max sm:flex-wrap">
+      {categoryTabs.map((tab) => (
+        <button
+          key={tab.key}
+          className={`px-3 sm:px-4 py-2 mr-2 mb-2 rounded text-sm sm:text-base whitespace-nowrap flex items-center ${
+            activeTab === tab.key
+             ? 'my-green-color-style text-white rounded-t-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 rounded-t-lg'
+          }`}
+          onClick={() => {
+            setActiveTab(tab.key);
+            setFilter('all');
+            setFilterType('location');
+          }}
+        >
+          <span className="mr-2 inline-flex items-center">{tab.icon}</span>
+          <span>{tab.label}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+)}
         
       <div className='container mx-auto  flex py-6'>
         {renderFilterOptions()}

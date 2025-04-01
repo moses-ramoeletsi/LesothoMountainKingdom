@@ -129,8 +129,8 @@ const HistoryAndHeritage = () => {
                 onClick={() => setActiveSection(tab.key)}
                 className={`px-3 sm:px-4 py-2 text-sm sm:text-base flex-1 ${
                   activeSection === tab.key 
-                    ? 'my-green-color-style text-white' 
-                    : 'text-blue-600 hover:bg-blue-100'
+                   ? 'my-green-color-style text-white rounded-t-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 rounded-t-lg'
                 } transition-colors`}
               >
                 {tab.label}
