@@ -82,41 +82,43 @@ const Weather = () => {
   
   return (
     <div className='min-h-screen bg-gradient-to-br from-green-100 to-blue-200 p-4 md:p-8'>
-        <div 
-          className="h-[400px] bg-cover bg-center flex items-center justify-center text-white"
-          style={{backgroundImage: "url('/images/community/contact-hero.jpg')"}}
-        >
-          <div className="text-center bg-black bg-opacity-50 p-10 rounded-xl">
-          <h1 className="text-4xl font-bold mb-4">Weather Dashboard</h1>
-          <p className="text-xl">Real-time weather updates for Lesotho and beyond</p>
-          </div>
-        </div>
-      <div className='max-w-6xl mx-auto'>
-        <div className='bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 mb-8'> 
-          <LocationSearch 
-            location={location} 
-            onLocationChange={handleLocationChange} 
-            loading={loading}
-          />
-          
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6'>
-            <div className='lg:col-span-1'>
-              <WeatherWidget 
-                weather={currentWeather} 
-                location={location} 
-                units={units} 
-                onToggleUnits={toggleUnits} 
-              />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+            <div 
+                className="h-64 sm:h-80 md:h-[400px] bg-cover bg-center flex items-center justify-center text-white rounded-lg overflow-hidden mb-8"
+                style={{backgroundImage: "url('/images/community/contact-hero.jpg')"}}
+                >
+                <div className="text-center bg-black bg-opacity-50 p-4 sm:p-6 md:p-10 rounded-xl w-full max-w-md mx-auto">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-4">Weather Dashboard</h1>
+                <p className="text-base sm:text-lg md:text-xl">Real-time weather updates for Lesotho and beyond</p>
+                </div>
+            </div>
+            <div className='max-w-6xl mx-auto'>
+                <div className='bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 mb-8'> 
+                <LocationSearch 
+                    location={location} 
+                    onLocationChange={handleLocationChange} 
+                    loading={loading}
+                />
+                
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6'>
+                    <div className='lg:col-span-1'>
+                    <WeatherWidget 
+                        weather={currentWeather} 
+                        location={location} 
+                        units={units} 
+                        onToggleUnits={toggleUnits} 
+                    />
+                    </div>
+                    
+                    <div className='lg:col-span-2'>
+                    <WeatherDetails weather={currentWeather} units={units} />
+                    </div>
+                </div>
             </div>
             
-            <div className='lg:col-span-2'>
-              <WeatherDetails weather={currentWeather} units={units} />
+            <ForecastSection forecast={forecast} units={units} />
             </div>
-          </div>
         </div>
-        
-        <ForecastSection forecast={forecast} units={units} />
-      </div>
     </div>
   )
 }

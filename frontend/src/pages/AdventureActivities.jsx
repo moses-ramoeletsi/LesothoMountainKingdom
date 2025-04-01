@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { adventureActivities, difficultyLevels } from '../data/adventureActivities';
 import { Car, Mountain, Snowflake } from 'lucide-react';
-import { 
-    FaMountain,
-    FaHorse, 
-  } from 'react-icons/fa';
+import { FaMountain, FaHorse } from 'react-icons/fa';
+
 const AdventureActivities = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState("All");
   const [activeActivity, setActiveActivity] = useState(adventureActivities[0]);
@@ -23,23 +21,23 @@ const AdventureActivities = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-100 to-blue-200">
-      {/* Hero Section */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
       <div 
-        className="h-[400px] bg-cover bg-center flex items-center justify-center text-white"
-        style={{backgroundImage: "url('/images/adventure/hero-background.jpg')"}}
+          className="h-64 sm:h-80 md:h-[400px] bg-cover bg-center flex items-center justify-center text-white rounded-lg overflow-hidden mb-8"
+          style={{backgroundImage: "url('/images/adventure/hero-background.jpg')"}}
       >
-        <div className="text-center bg-black bg-opacity-50 p-10 rounded-xl">
-          <h1 className="text-4xl font-bold mb-4">Adventure in the Kingdom in the Sky</h1>
-          <p className="text-xl">Explore Lesotho's Thrilling Outdoor Experiences</p>
+          <div className="text-center bg-black bg-opacity-50 p-4 sm:p-6 md:p-10 rounded-xl w-full max-w-md mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-4">Adventure in the Kingdom in the Sky</h1>
+          <p className="text-base sm:text-lg md:text-xl">Explore Lesotho's Thrilling Outdoor Experiences</p>
         </div>
       </div>
 
-      <div className="container mx-auto py-12">
-        {/* Difficulty Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+      <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12">
+        {/* Difficulty Filter - Improved mobile layout */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
           <button 
             onClick={() => setSelectedDifficulty("All")}
-            className={`px-4 py-2 rounded ${
+            className={`px-3 py-1 sm:px-4 sm:py-2 rounded text-sm sm:text-base ${
               selectedDifficulty === "All" 
                 ? "bg-green-600 text-white" 
                 : "bg-gray-200 text-gray-800"
@@ -51,7 +49,7 @@ const AdventureActivities = () => {
             <button
               key={level}
               onClick={() => setSelectedDifficulty(level)}
-              className={`px-4 py-2 rounded ${
+              className={`px-3 py-1 sm:px-4 sm:py-2 rounded text-sm sm:text-base ${
                 selectedDifficulty === level 
                   ? "bg-green-600 text-white" 
                   : "bg-gray-200 text-gray-800"
@@ -62,46 +60,50 @@ const AdventureActivities = () => {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Activities List */}
-          <div className="md:col-span-1 space-y-4">
-            {filteredActivities.map(activity => {
-              const ActivityIcon = activityIcons[activity.name];
-              return (
-                <button
-                  key={activity.id}
-                  onClick={() => setActiveActivity(activity)}
-                  className={`w-full text-left p-4 rounded-lg flex items-center transition-all ${
-                    activeActivity.id === activity.id 
-                      ? "bg-green-600 text-white" 
-                      : "bg-white text-gray-800 hover:bg-green-100"
-                  }`}
-                >
-                  {ActivityIcon && <ActivityIcon className="mr-4 text-2xl" />}
-                  <div>
-                    <h3 className="text-xl font-semibold">{activity.name}</h3>
-                    <p className="text-sm">{activity.difficulty} Difficulty</p>
-                  </div>
-                </button>
-              );
-            })}
+        {/* Main content grid - Responsive columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          {/* Activities List - Horizontal scrolling on small screens, vertical on large */}
+          <div className="lg:col-span-1">
+            <div className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 gap-3 lg:gap-4">
+              {filteredActivities.map(activity => {
+                const ActivityIcon = activityIcons[activity.name];
+                return (
+                  <button
+                    key={activity.id}
+                    onClick={() => setActiveActivity(activity)}
+                    className={`flex-shrink-0 lg:flex-shrink lg:w-full text-left p-3 sm:p-4 rounded-lg flex items-center transition-all ${
+                      activeActivity.id === activity.id 
+                        ? "bg-green-600 text-white" 
+                        : "bg-white text-gray-800 hover:bg-green-100"
+                    }`}
+                    style={{minWidth: "180px"}}
+                  >
+                    {ActivityIcon && <ActivityIcon className="mr-3 text-xl sm:text-2xl" />}
+                    <div>
+                      <h3 className="text-base sm:text-xl font-semibold">{activity.name}</h3>
+                      <p className="text-xs sm:text-sm">{activity.difficulty} Difficulty</p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Activity Details */}
-          <div className="md:col-span-2 bg-white rounded-lg shadow-lg p-8">
+          {/* Activity Details - Full width on mobile, 2/3 on large screens */}
+          <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
             <img 
               src={activeActivity.imageUrl} 
               alt={activeActivity.name} 
-              className="w-full h-96 object-cover rounded-lg mb-6"
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-lg mb-4 sm:mb-6"
             />
             
-            <h2 className="text-3xl font-bold mb-4 text-green-800">{activeActivity.name}</h2>
-            <p className="text-gray-600 mb-6">{activeActivity.description}</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-4 text-green-800">{activeActivity.name}</h2>
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">{activeActivity.description}</p>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <h3 className="font-semibold mb-2">Details</h3>
-                <div className="space-y-2">
+                <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Details</h3>
+                <div className="space-y-1 sm:space-y-2 text-sm sm:text-base">
                   <p>
                     <strong>Difficulty:</strong> {activeActivity.difficulty}
                   </p>
@@ -115,12 +117,12 @@ const AdventureActivities = () => {
               </div>
 
               <div>
-                <h3 className="font-semibold mb-2">Locations</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Locations</h3>
+                <div className="flex flex-wrap gap-1 sm:gap-2">
                   {activeActivity.locations.map(location => (
                     <span 
                       key={location} 
-                      className="bg-green-100 my-secondary-text-color-style px-2 py-1 rounded-full text-sm"
+                      className="bg-green-100 my-secondary-text-color-style px-2 py-1 rounded-full text-xs sm:text-sm"
                     >
                       {location}
                     </span>
@@ -129,9 +131,9 @@ const AdventureActivities = () => {
               </div>
             </div>
 
-            <div className="mt-6">
-              <h3 className="font-semibold mb-2">Highlights</h3>
-              <ul className="list-disc list-inside space-y-2">
+            <div className="mt-4 sm:mt-6">
+              <h3 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Highlights</h3>
+              <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base">
                 {activeActivity.highlights.map(highlight => (
                   <li key={highlight} className="text-gray-700">
                     {highlight}
@@ -142,6 +144,7 @@ const AdventureActivities = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

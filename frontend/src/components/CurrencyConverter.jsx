@@ -86,29 +86,29 @@ const CurrencyConverter = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-gradient-to-br from-green-100 to-blue-200 p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl my-text-color-style font-bold mb-4 text-center">Currency Converter</h2>
+    <div className="bg-gradient-to-br from-green-100 to-blue-200 p-4 sm:p-6 rounded-lg shadow-md">
+      <h2 className="text-xl sm:text-2xl my-text-color-style font-bold mb-3 sm:mb-4 text-center">Currency Converter</h2>
       
       {/* Amount input */}
-      <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Amount</label>
+      <div className="mb-3 sm:mb-4">
+        <label className="block text-xs sm:text-sm font-medium mb-1">Amount</label>
         <input
           type="number"
           value={amount}
           onChange={handleAmountChange}
-          className="w-full p-3 border rounded-md shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300"
+          className="w-full p-2 sm:p-3 border rounded-md shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300"
           min="0"
         />
       </div>
       
-      {/* Currency selection */}
-      <div className="flex items-center mb-4">
-        <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">From</label>
+      {/* Currency selection - responsive layout */}
+      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-0 mb-3 sm:mb-4">
+        <div className="w-full sm:flex-1">
+          <label className="block text-xs sm:text-sm font-medium mb-1">From</label>
           <select 
             value={fromCurrency}
             onChange={(e) => setFromCurrency(e.target.value)}
-            className="w-full p-3 border rounded-md shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300"
+            className="w-full p-2 sm:p-3 border rounded-md shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300"
           >
             {Object.entries(currencies).map(([code, name]) => (
               <option key={`from-${code}`} value={code}>
@@ -120,18 +120,18 @@ const CurrencyConverter = () => {
         
         <button 
           onClick={handleSwap}
-          className="mx-2 p-2 bg-white rounded-full shadow hover:bg-gray-100 transition-colors"
+          className="my-2 sm:mx-2 p-2 bg-white rounded-full shadow hover:bg-gray-100 transition-colors"
           aria-label="Swap currencies"
         >
           <ArrowLeftRight size={20} />
         </button>
         
-        <div className="flex-1">
-          <label className="block text-sm font-medium mb-1">To</label>
+        <div className="w-full sm:flex-1">
+          <label className="block text-xs sm:text-sm font-medium mb-1">To</label>
           <select 
             value={toCurrency}
             onChange={(e) => setToCurrency(e.target.value)}
-            className="w-full p-3 border rounded-md shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300"
+            className="w-full p-2 sm:p-3 border rounded-md shadow-sm focus:ring focus:ring-blue-200 focus:border-blue-300"
           >
             {Object.entries(currencies).map(([code, name]) => (
               <option key={`to-${code}`} value={code}>
@@ -143,19 +143,19 @@ const CurrencyConverter = () => {
       </div>
       
       {/* Result display */}
-      <div className="bg-white p-4 rounded-md shadow-sm mb-4">
+      <div className="bg-white p-3 sm:p-4 rounded-md shadow-sm mb-3 sm:mb-4">
         {loading ? (
           <div className="flex justify-center">
             <RefreshCcw className="animate-spin" />
           </div>
         ) : error ? (
-          <div className="text-red-500 text-center">{error}</div>
+          <div className="text-red-500 text-center text-sm sm:text-base">{error}</div>
         ) : (
           <div className="text-center">
-            <div className="text-lg my-secondary-text-color-style  font-bold">
+            <div className="text-base sm:text-lg my-secondary-text-color-style font-bold">
               {amount} {fromCurrency} = {convertCurrency()} {toCurrency}
             </div>
-            <div className="text-sm my-secondary-text-color-style">
+            <div className="text-xs sm:text-sm my-secondary-text-color-style">
               1 {fromCurrency} = {exchangeRate.toFixed(4)} {toCurrency}
             </div>
           </div>
