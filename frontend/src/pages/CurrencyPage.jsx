@@ -5,7 +5,7 @@ import { Compass } from "lucide-react";
 const CurrencyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-200">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Hero section with responsive height and padding */}
         <div
           className="h-48 sm:h-64 md:h-80 lg:h-96 bg-cover bg-center flex items-center justify-center text-white rounded-lg overflow-hidden mb-8"

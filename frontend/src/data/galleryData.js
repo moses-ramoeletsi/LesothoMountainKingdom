@@ -4,7 +4,7 @@ export const galleryData = {
         id: 'l1', 
         title: 'Maletsunyane Falls', 
         description: 'Spectacular 192-meter waterfall near Semonkong', 
-        src: '/images/landscapes/maletsunyane-falls.jpg', 
+        src: '/images/attractions/maletsunyane-falls.jpg', 
         category: 'landscape', 
         location: 'Semonkong' 
       },
@@ -28,7 +28,7 @@ export const galleryData = {
         id: 'l4', 
         title: 'Katse Dam', 
         description: 'Africa\'s second largest double-curvature arch dam', 
-        src: '/images/landscapes/katse-dam.jpg', 
+        src: '/images/attractions/katse-dam.jpg', 
         category: 'landscape', 
         location: 'Thaba-Tseka' 
       },
@@ -54,7 +54,7 @@ export const galleryData = {
         id: 'c1', 
         title: 'Basotho Blankets', 
         description: 'Traditional ceremonial blankets with distinctive patterns', 
-        src: '/images/cultural/basotho-blankets.jpg', 
+        src: '/images/culture/basotho-blanket.jpg', 
         category: 'cultural', 
         location: 'Maseru' 
       },
@@ -62,7 +62,7 @@ export const galleryData = {
         id: 'c2', 
         title: 'Mokorotlo Hats', 
         description: 'Iconic conical straw hats representing Lesotho\'s national symbol', 
-        src: '/images/cultural/mokorotlo-hats.jpg', 
+        src: '/images/culture/Mokorotlo.png', 
         category: 'cultural', 
         location: 'Various' 
       },

@@ -106,7 +106,7 @@ const HistoryAndHeritage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-100 to-blue-200">
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+      <div className="w-full  mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div 
           className="h-48 sm:h-64 md:h-80 lg:h-[400px] bg-cover bg-center flex items-center justify-center text-white rounded-lg overflow-hidden mb-6 sm:mb-8"
           style={{backgroundImage: "url('/images/history/heritage-hero.jpg')"}}

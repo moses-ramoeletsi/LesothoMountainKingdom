@@ -82,7 +82,7 @@ const Weather = () => {
   
   return (
     <div className='min-h-screen bg-gradient-to-br from-green-100 to-blue-200 p-4 md:p-8'>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+        <div className=" mx-auto px-4 sm:px-6 py-6">
             <div 
                 className="h-64 sm:h-80 md:h-[400px] bg-cover bg-center flex items-center justify-center text-white rounded-lg overflow-hidden mb-8"
                 style={{backgroundImage: "url('/images/community/contact-hero.jpg')"}}

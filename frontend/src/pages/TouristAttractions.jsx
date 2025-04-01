@@ -11,7 +11,7 @@ const TouristAttractions = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-100 to-blue-200">
-      <div className="container max-w-4xl mx-auto px-4 py-6">
+      <div className="container  mx-auto px-4 py-6">
         <div 
           className="h-48 sm:h-64 md:h-80 lg:h-96 bg-cover bg-center flex items-center justify-center text-white rounded-lg overflow-hidden mb-6 md:mb-8"
           style={{backgroundImage: "url('/images/attractions/hero-background.jpg')"}}

@@ -56,7 +56,7 @@ const Contact = () => {
 
   return (
     <div className="bg-gradient-to-br from-green-100 to-blue-200 min-h-screen">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+      <div className=" mx-auto px-4 sm:px-6 py-6">
         {/* Responsive Hero Section */}
         <div 
             className="h-64 sm:h-80 md:h-[400px] bg-cover bg-center flex items-center justify-center text-white rounded-lg overflow-hidden mb-8"

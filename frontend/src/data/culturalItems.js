@@ -13,7 +13,7 @@ export const culturalItems = [
       name: "Mokorotlo Hat",
       description: "The national symbol of Lesotho, a conical straw hat that represents Basotho heritage and is worn during important ceremonies.",
       significance: "Cultural emblem and traditional headwear",
-      imageUrl: "/images/culture/mokorotlo-hat.jpg",
+      imageUrl: "/images/culture/Mokorotlo.png",
       material: "Woven Straw",
       occasions: ["Ceremonies", "Cultural Events"]
     },
